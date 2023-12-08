@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  app:
+    hostname: app-ss
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:80"
+      - "8443:443"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - mariadb
+  mariadb:
+    hostname: mariadb-ss
+    image: mariadb:10.5
+    ports:
+      - "9906:3306"
+    environment:
+      ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cigniter4_ss
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+    volumes:
+      - ./mariadb/mysql:/var/lib/mysql
+      - ./mariadb/logs/mysql:/var/log/mysql
+  phpmyadmin:
+    hostname: phpmyadmin-ss
+    image: phpmyadmin:latest
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mariadb-ss
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+    depends_on:
+      - mariadb
