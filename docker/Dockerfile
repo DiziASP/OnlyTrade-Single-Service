@@ -25,7 +25,7 @@ RUN a2enmod rewrite
 RUN a2enmod headers
 RUN a2enmod ssl
 
-RUN chmod -R 777 /app/writable
+RUN chmod -R 777 /app/storage
 
 RUN apt-get clean \
     && rm -r /var/lib/apt/lists/*
