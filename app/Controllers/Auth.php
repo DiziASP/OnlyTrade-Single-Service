@@ -6,7 +6,6 @@ use App\Controllers\BaseController;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\AdminModel;
 use \Firebase\JWT\JWT;
-use Ramsey\Uuid\Uuid;
 
 class Auth extends BaseController
 {
@@ -14,7 +13,12 @@ class Auth extends BaseController
 
     public function index()
     {
-        return $this->respond(['status' => 200, 'message' => 'Welcome to CodeIgniter 4 REST API']);
+        return $this->respond(['status' => 200, 'message' => 'This is login page']);
+    }
+
+    public function register()
+    {
+        return $this->respond(['status' => 200, 'message' => 'This is register page']);
     }
 
     public function loginAction()
@@ -60,9 +64,6 @@ class Auth extends BaseController
             ],
         ];
 
-        // Store token in session
-        session()->set('token', $token);
-
         return $this->respond($response, 200);
     }
 
@@ -90,7 +91,11 @@ class Auth extends BaseController
                 'data'     => $data,
             ], 200);
         } else {
-            return $this->fail("Email is already exist", 409);
+            // If email already exist
+            return $this->respond([
+                'status'   => 400,
+                'messages' => $this->validator->getErrors(),
+            ], 400);
         }
     }
 
