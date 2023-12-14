@@ -1,84 +1,74 @@
 <!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title><?= lang('Errors.pageNotFound') ?></title>
 
-    <style>
-        div.logo {
-            height: 200px;
-            width: 155px;
-            display: inline-block;
-            opacity: 0.08;
-            position: absolute;
-            top: 2rem;
-            left: 50%;
-            margin-left: -73px;
-        }
-        body {
-            height: 100%;
-            background: #fafafa;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: #777;
-            font-weight: 300;
-        }
-        h1 {
-            font-weight: lighter;
-            letter-spacing: normal;
-            font-size: 3rem;
-            margin-top: 0;
-            margin-bottom: 0;
-            color: #222;
-        }
-        .wrap {
-            max-width: 1024px;
-            margin: 5rem auto;
-            padding: 2rem;
-            background: #fff;
-            text-align: center;
-            border: 1px solid #efefef;
-            border-radius: 0.5rem;
-            position: relative;
-        }
-        pre {
-            white-space: normal;
-            margin-top: 1.5rem;
-        }
-        code {
-            background: #fafafa;
-            border: 1px solid #efefef;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            display: block;
-        }
-        p {
-            margin-top: 1.5rem;
-        }
-        .footer {
-            margin-top: 2rem;
-            border-top: 1px solid #efefef;
-            padding: 1em 2em 0 2em;
-            font-size: 85%;
-            color: #999;
-        }
-        a:active,
-        a:link,
-        a:visited {
-            color: #dd4814;
-        }
-    </style>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>404 | OnlyTrade</title>
+
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+        <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+        <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+
+        <!-- PLUGINS CSS STYLE -->
+        <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+
+        <!-- MONO CSS -->
+        <link id="main-css-href" rel="stylesheet" href="css/style.css" />
+
+
+
+
+        <!-- FAVICON -->
+        <link href="images/favicon.png" rel="shortcut icon" />
+
+        <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+        <script src="plugins/nprogress/nprogress.js"></script>
+    </head>
+
 </head>
-<body>
-    <div class="wrap">
-        <h1>404</h1>
 
-        <p>
-            <?php if (ENVIRONMENT !== 'production') : ?>
-                <?= nl2br(esc($message)) ?>
-            <?php else : ?>
-                <?= lang('Errors.sorryCannotFind') ?>
-            <?php endif; ?>
-        </p>
+<body class="bg-light-gray" id="body">
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh">
+        <div class="d-flex flex-column justify-content-between">
+            <div class="row justify-content-center mt-5">
+                <div class="text-center page-404">
+                    <h1 class="error-title">404</h1>
+                    <p class="pt-4 error-subtitle">Looks like something went wrong.</p>
+                    <p class="pt-4 pb-5 font-weight-bold h4">
+                        <?php if (ENVIRONMENT !== 'production') : ?>
+                            <?= nl2br(esc($message)) ?>
+                        <?php else : ?>
+                            <?= lang('Errors.sorryCannotFind') ?>
+                        <?php endif; ?>
+                    </p>
+                    <a href="/" class="btn btn-primary btn-pill">Back to Home</a>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </body>
+
 </html>
