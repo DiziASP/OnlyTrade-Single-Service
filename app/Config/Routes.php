@@ -49,5 +49,5 @@ $routes->group('barang', function ($routes) {
 $routes->group('perusahaan', function ($routes) {
     $routes->get('/', 'Dashboard::perusahaan_dashboard', ['filter' => 'route']);
     $routes->get('add', 'Dashboard::perusahaan_add', ['filter' => 'route']);
-    // $routes->get('(:any)', 'Dashboard::barang_edit/$1', ['filter' => 'route']);
+    $routes->get('(:any)', 'Dashboard::perusahaan_edit/$1', ['filter' => 'route']);
 });

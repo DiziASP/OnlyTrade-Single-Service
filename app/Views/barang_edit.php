@@ -17,7 +17,7 @@
         <label for="price">Price</label>
         <input type="number" class="form-control rounded-0" id="price" name="price" placeholder="<?= $data['price'] ?>">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="perusahaan">Perusahaan</label>
         <select class="form-control rounded-0" id="perusahaan_id" name="perusahaan_id">
             <?php foreach ($perusahaan as $row) : ?>
@@ -26,7 +26,7 @@
                 </option>
             <?php endforeach; ?>
         </select>
-    </div>
+    </div> -->
     <div class="form-footer">
         <button type="button" class="btn btn-secondary btn-pill" onclick="handleSubmit('<?= $data['id'] ?>')">Submit</button>
         <a href="/barang">
@@ -39,20 +39,15 @@
 <script>
     function handleSubmit(id) {
         data = {
-            name: "Sapi Patah Hati 2 123",
-            stock: "20",
-            price: "80000",
-            perusahaan_id: "4bfc25cb-99ed-11ee-abae-0242ac1e0002"
+            name: document.getElementById('name').value,
+            stock: document.getElementById('stock').value,
+            price: document.getElementById('price').value,
         }
+        alert(JSON.stringify(data));
         $.ajax({
-            url: '/api/barang/' + "fd2573a4-829e-4081-bbed-ba926ee47743",
+            url: '/api/barang/' + id,
             method: 'PUT',
-            data: {
-                name: "Sapi Patah Hati 2 123",
-                stock: "20",
-                price: "80000",
-                perusahaan_id: "4bfc25cb-99ed-11ee-abae-0242ac1e0002"
-            },
+            data: data,
             success: function(result) {
                 window.location.href = '/barang';
             },
