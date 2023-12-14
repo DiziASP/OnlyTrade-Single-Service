@@ -29,9 +29,11 @@
                     <td><?= $row['price'] ?></td>
                     <td><?= $row['perusahaan_name'] ?></td>
                     <td>
-                        <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#modal-edit-event">
-                            <i class="mdi mdi-pencil mr-1"></i>
-                        </button>
+                        <a href="/barang/<?= $row['id'] ?>">
+                            <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#modal-edit-event">
+                                <i class="mdi mdi-pencil mr-1"></i>
+                            </button>
+                        </a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-event">
                             <i class="mdi mdi-delete mr-1"></i>
                         </button>

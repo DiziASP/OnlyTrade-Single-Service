@@ -38,5 +38,9 @@ $routes->get('/api/auth/logout', 'Auth::logoutAction');
  * View Routes
  */
 $routes->get('/', 'Dashboard::index', ['filter' => 'route']);
-$routes->get('/barang', 'Dashboard::barang_dashboard', ['filter' => 'route']);
+$routes->group('barang', function ($routes) {
+    $routes->get('/', 'Dashboard::barang_dashboard', ['filter' => 'route']);
+    // $routes->get('/add', 'Dashboard::barang_add', ['filter' => 'route']);
+    $routes->get('(:any)', 'Dashboard::barang_edit/$1', ['filter' => 'route']);
+});
 $routes->get('/perusahaan', 'Dashboard::perusahaan_dashboard', ['filter' => 'route']);

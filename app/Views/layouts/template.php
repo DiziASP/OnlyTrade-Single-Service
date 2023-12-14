@@ -18,21 +18,21 @@
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
-    <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
-    <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>/plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>/plugins/simplebar/simplebar.css" rel="stylesheet" />
 
     <!-- PLUGINS CSS STYLE -->
-    <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>/plugins/nprogress/nprogress.css" rel="stylesheet" />
 
 
-    <link href="plugins/prism/prism.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>/plugins/prism/prism.css" rel="stylesheet" />
 
 
     <!-- MONO CSS -->
-    <link id="main-css-href" rel="stylesheet" href="css/style.css" />
+    <link id="main-css-href" rel="stylesheet" href="<?php echo base_url() ?>/css/style.css" />
 
     <!-- FAVICON -->
-    <link href="images/icon.png" rel="shortcut icon" />
+    <link href="<?php echo base_url() ?>/images/icon.png" rel="shortcut icon" />
 
     <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -42,7 +42,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-    <script src="plugins/nprogress/nprogress.js"></script>
+    <script src="<?php echo base_url() ?>/plugins/nprogress/nprogress.js"></script>
 </head>
 
 
@@ -90,20 +90,20 @@
 
 
 
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="plugins/simplebar/simplebar.min.js"></script>
+    <script src="<?php echo base_url() ?>/plugins/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url() ?>/plugins/simplebar/simplebar.min.js"></script>
     <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 
 
 
-    <script src="plugins/prism/prism.js"></script>
+    <script src="<?php echo base_url() ?>/plugins/prism/prism.js"></script>
 
 
-    <script src="js/mono.js"></script>
-    <script src="js/chart.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="<?php echo base_url() ?>/js/mono.js"></script>
+    <script src="<?php echo base_url() ?>/js/chart.js"></script>
+    <script src="<?php echo base_url() ?>/js/map.js"></script>
+    <script src="<?php echo base_url() ?>/js/custom.js"></script>
 
 
 

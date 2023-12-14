@@ -30,6 +30,11 @@ class Dashboard extends BaseController
         return view('barang_dashboard', ['data' => $data]);
     }
 
+    public function barang_edit($id = null)
+    {
+        return view('barang_edit', ['id' => $id]);
+    }
+
     public function perusahaan_dashboard(): string
     {
         // if enviroment is production, use base_url() else use docker base url 
