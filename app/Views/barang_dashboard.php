@@ -5,9 +5,11 @@
     <div class="card-header align-items-center p-0 py-4">
         <h1 class="font-weight-bold">Dashboard | Barang </h1>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-event">
-            <i class="mdi mdi-plus mr-1"></i> Add Barang
-        </button>
+        <a href="/barang/add">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-event">
+                <i class="mdi mdi-plus mr-1"></i> Add Barang
+            </button>
+        </a>
     </div>
     <table id="productsTable" class="table table-hover table-product" style="width:100%">
         <thead>

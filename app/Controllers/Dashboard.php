@@ -30,9 +30,22 @@ class Dashboard extends BaseController
         return view('barang_dashboard', ['data' => $data]);
     }
 
+    public function barang_add()
+    {
+        $perusahaanModel = new \App\Models\PerusahaanModel();
+        $data = $perusahaanModel->findAll();
+
+        return view('barang_add', ['perusahaan' => $data]);
+    }
+
     public function barang_edit($id = null)
     {
-        return view('barang_edit', ['id' => $id]);
+        $barangModel = new \App\Models\BarangModel();
+        $data = $barangModel->find($id);
+
+        $perusahaanModel = new \App\Models\PerusahaanModel();
+        $perusahaan = $perusahaanModel->findAll();
+        return view('barang_edit', ['data' => $data, 'perusahaan' => $perusahaan]);
     }
 
     public function perusahaan_dashboard(): string
@@ -48,61 +61,4 @@ class Dashboard extends BaseController
         $data = $response['data'];
         return view('perusahaan_dashboard', ['data' => $data]);
     }
-
-    // function http_request($url, $data = null, $headers = null, $method = null)
-    // {
-    //     $curl = curl_init();
-
-    //     switch ($method) {
-    //         case "GET":
-    //             curl_setopt($curl, CURLOPT_HTTPGET, 1);
-    //             break;
-    //         case "POST":
-    //             curl_setopt($curl, CURLOPT_POST, 1);
-
-    //             if ($data) {
-    //                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-    //             }
-    //             break;
-    //         case "PUT":
-    //             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-
-    //             if ($data) {
-    //                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-    //             }
-    //             break;
-    //         case "DELETE":
-    //             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
-
-    //             if ($data) {
-    //                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-    //             }
-    //             break;
-    //         default:
-    //             if ($data) {
-    //                 $url = sprintf("%s?%s", $url, http_build_query($data));
-    //             }
-    //     }
-
-    //     // OPTIONS:
-    //     curl_setopt($curl, CURLOPT_URL, $url);
-
-    //     if ($headers) {
-    //         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-    //     }
-
-    //     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    //     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-
-    //     // EXECUTE:
-    //     $result = curl_exec($curl);
-
-    //     if (!$result) {
-    //         die("Connection Failure");
-    //     }
-
-    //     curl_close($curl);
-
-    //     return json_decode($result, true);
-    // }
 }

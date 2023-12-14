@@ -91,7 +91,7 @@ class Barang extends ResourceController
                 return $this->failResourceExists('Duplicate entry', 409);
             }
             // Handle other database-related errors
-            return $this->fail($e->getMessage(), $e->getCode());
+            return $this->fail($e->getMessage(), 500);
         }
     }
 
