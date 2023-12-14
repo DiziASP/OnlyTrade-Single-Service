@@ -32,6 +32,7 @@ $routes->get('/login', 'Auth::index');
 $routes->get('/register', 'Auth::register');
 $routes->post('/api/auth/login', 'Auth::loginAction');
 $routes->post('/api/auth/register', 'Auth::registerAction');
+$routes->get('/api/auth/logout', 'Auth::logoutAction');
 
 /**
  * View Routes

@@ -27,7 +27,11 @@ class AuthFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        $token = $request->getHeaderLine('Authorization');
+        // Get token from session
+        $token = session()->get('token');
+
+
+        // $token = $request->getHeaderLine('Authorization');
 
         if (!$token) {
             return service('response')->setStatusCode(401)->setJSON([
@@ -39,7 +43,7 @@ class AuthFilter implements FilterInterface
 
         $key = getenv('JWT_SECRET');
 
-        // Extract
+        // // Extract
         $token = explode(" ", $token)[1];
 
         try {

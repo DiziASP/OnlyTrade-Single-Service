@@ -25,7 +25,8 @@ class RouteFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        $token = $request->getHeaderLine('Authorization');
+        // Get token from session
+        $token = session()->get('token');
 
         if (!$token) {
             return redirect()->to('/login');

@@ -64,7 +64,10 @@ class Auth extends BaseController
             ],
         ];
 
-        return $this->respond($response, 200);
+        // Store the JWT
+        session()->set('token', $token);
+
+        return redirect()->to('/');
     }
 
     public function registerAction()
@@ -102,9 +105,7 @@ class Auth extends BaseController
     public function logoutAction()
     {
         session()->destroy();
-        return $this->respond([
-            'status'   => 200,
-            'messages' => 'Logout successfully',
-        ], 200);
+
+        return redirect()->to('/login');
     }
 }

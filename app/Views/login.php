@@ -40,7 +40,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Only Trade</a>
+            <a class="navbar-brand" href="#">OnlyTrade</a>
         </div>
     </nav>
     <div class="container">
@@ -53,7 +53,7 @@
             </div>
         <?php endif; ?>
 
-        <form action="/login_action" method="post">
+        <form action="/api/auth/login" method="post">
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
