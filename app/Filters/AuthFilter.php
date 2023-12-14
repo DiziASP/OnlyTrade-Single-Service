@@ -40,22 +40,6 @@ class AuthFilter implements FilterInterface
                 'data' => []
             ]);
         }
-
-        $key = getenv('JWT_SECRET');
-
-        // // Extract
-        $token = explode(" ", $token)[1];
-
-        try {
-            $decoded = JWT::decode($token, new Key($key, 'HS256'));
-            return $request;
-        } catch (\Exception $e) {
-            return service('response')->setStatusCode(401)->setJSON([
-                'status' => 401,
-                'message' => 'Unauthorized',
-                'data' => []
-            ]);
-        }
     }
 
     /**

@@ -31,11 +31,11 @@
                     <td>
                         <a href="/barang/<?= $row['id'] ?>">
                             <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#modal-edit-event">
-                                <i class="mdi mdi-pencil mr-1"></i>
+                                <i class="mdi mdi-pencil"></i>
                             </button>
                         </a>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-event">
-                            <i class="mdi mdi-delete mr-1"></i>
+                        <button type="button" class="btn btn-danger" onclick="handleDelete('<?= $row['id'] ?>')">
+                            <i class="mdi mdi-delete"></i>
                         </button>
                     </td>
                 </tr>
@@ -45,4 +45,20 @@
         </tbody>
     </table>
 </div>
+
+<!-- Delete Function using Ajax -->
+<script>
+    function handleDelete(id) {
+        $.ajax({
+            url: '/api/barang/' + id,
+            type: 'DELETE',
+            success: function(result) {
+                location.reload();
+            },
+            error: function(xhr, status, error) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+</script>
 <?= $this->endSection() ?>

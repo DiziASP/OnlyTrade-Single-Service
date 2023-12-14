@@ -3,7 +3,7 @@
         <!-- Aplication Brand -->
         <div class="app-brand">
             <a href="/">
-                <img src="images/onlytrade.png" alt="Mono">
+                <img src="<?php echo base_url() ?>/images/onlytrade.png" alt="Mono">
             </a>
         </div>
         <!-- begin sidebar scrollbar -->
