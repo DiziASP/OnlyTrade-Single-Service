@@ -1,0 +1,2159 @@
+{
+	"info": {
+		"_postman_id": "e5e1fa9a-3d10-4088-922f-899b8b86e2ab",
+		"name": "Tugas Besar II3160 Sistem Teknologi Terintegrasi - Single Service API Contract",
+		"description": "API Contract for Sistem Manajemen OnlyTrade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17048244"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"id\", res.data.id)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin Dizi\",\r\n    \"email\": \"dizi@gmail.com\",\r\n    \"password\": \"dizidizi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/admins"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Admin Dizi\",\r\n    \"email\": \"dizi@gmail.com\",\r\n    \"password\": \"dizidizi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admins"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:10:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702494639.988911"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702494639.988911"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"messages\": \"Admins added successfully\",\n    \"data\": {\n        \"id\": \"3a7de931-1223-42ff-9427-f7058ea61f23\",\n        \"name\": \"Admin Dizi\",\n        \"email\": \"dizi@gmail.com\",\n        \"password\": \"465e6cc7500fe2e8da9410f1ef720ee3\"\n    }\n}"
+						},
+						{
+							"name": "409 - Duplicate Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Admin Dizi\",\r\n    \"email\": \"dizi@gmail.com\",\r\n    \"password\": \"dizidizi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admins"
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:11:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702494675.489986"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702494675.489986"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 409,\n    \"error\": \"409\",\n    \"messages\": {\n        \"error\": \"Duplicate entry\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.collectionVariables.set(\"token\", res.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin Dizi Ganteng Bangetz\",\r\n    \"email\": \"dizi@gmail.com\",\r\n    \"password\": \"dizidizi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/admins/{{id}}"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"pege\",\r\n    \"password\":\"pw123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/users/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "374"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"176-jsktbQgebXSlp3f/xM0q/kLumJc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Sep 2023 13:41:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"role\": \"guest\",\n        \"_id\": \"650c464df835c759046b12f7\",\n        \"name\": \"pege\",\n        \"username\": \"pege\",\n        \"email\": \"23523017@std.stei.itb.ac.id\",\n        \"createdAt\": \"2023-09-21T13:34:05.418Z\",\n        \"updatedAt\": \"2023-09-21T13:41:20.723Z\",\n        \"__v\": 2\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBjNDY0ZGY4MzVjNzU5MDQ2YjEyZjciLCJpYXQiOjE2OTUzMDM2ODB9.OfbWuHeCTUDSB9qdZU74kiUS7GhNKY6ecPmLLwyZ1iw\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get List of Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/admins"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admins"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 17:59:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702490352.579004"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702490352.579004"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Admins retrieved successfully\",\n    \"data\": {\n        \"admins\": [\n            {\n                \"id\": \"532816dc-99d0-11ee-9773-0242ac1e0002\",\n                \"name\": \"Admin\",\n                \"email\": \"adminadmin@gmail.com\",\n                \"password\": \"f6fdffe48c908deb0f4c3bd36c032e72\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/admins/{{id}}"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admins"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 17:59:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702490352.579004"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702490352.579004"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Admins retrieved successfully\",\n    \"data\": {\n        \"admins\": [\n            {\n                \"id\": \"532816dc-99d0-11ee-9773-0242ac1e0002\",\n                \"name\": \"Admin\",\n                \"email\": \"adminadmin@gmail.com\",\n                \"password\": \"f6fdffe48c908deb0f4c3bd36c032e72\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/admins/{{id}}"
+					},
+					"response": [
+						{
+							"name": "200 - Deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admins/{{id}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:09:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702494595.568650"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702494595.568650"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Admins deleted successfully\",\n    \"data\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"token\", res.data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ayam@gmail.com\",\n    \"password\": \"ayamayam\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Admin Ayam\",\n    \"email\": \"ayam2asdjkajskd@gmail.com\",\n    \"password\": \"ayamayam\",\n    \"confirm_password\": \"ayamayam\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/auth/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Perusahaan",
+			"item": [
+				{
+					"name": "Create perusahaan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"perusahaan_id\", res.data.id)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"PT. HOHOHOHOHO\",\r\n    \"alamat\": \"Jl. AYAM No.69\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/perusahaan"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"PT. HOHOHOHOHO\",\r\n    \"alamat\": \"Jl. AYAM No.69\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:29:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495790.893147"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495790.893147"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"messages\": \"Items added successfully\",\n    \"data\": {\n        \"id\": \"0ffce9b1-e8eb-40df-889a-39428680aaab\",\n        \"nama\": \"PT. HOHOHOHOHO\",\n        \"alamat\": \"Jl. AYAM No.69\",\n        \"no_telp\": \"+62882194381\"\n    }\n}"
+						},
+						{
+							"name": "409 - Duplicate Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"PT. HOHOHOHOHO\",\r\n    \"alamat\": \"Jl. AYAM No.69\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan"
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:30:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495810.126417"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495810.126417"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 409,\n    \"error\": \"409\",\n    \"messages\": {\n        \"error\": \"Duplicate entry\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Perusahaan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.collectionVariables.set(\"token\", res.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"PT. KUNGKINGKANG\",\r\n    \"alamat\": \"Jl. AYAM No.2\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/perusahaan/228ea49d-fdc9-44e4-95f4-6ac6b290d9f4"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"PT. KUNGKINGKANGKINGKONG\",\r\n    \"alamat\": \"Jl. AYAM No.2\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/perusahaan/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"perusahaan",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:32:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495934.062987"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495934.062987"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Items updated successfully\",\n    \"data\": {\n        \"nama\": \"PT. KUNGKINGKANGKINGKONG\",\n        \"alamat\": \"Jl. AYAM No.2\",\n        \"no_telp\": \"+62882194381\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get List of Perusahaan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/perusahaan"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:32:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495959.050303"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495959.050303"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1025"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Items retrieved successfully\",\n    \"data\": {\n        \"perusahaan\": [\n            {\n                \"id\": \"6e25ba8b-99d2-11ee-9773-0242ac1e0002\",\n                \"nama\": \"PT. Patah Hati\",\n                \"alamat\": \"Jl. Jomblo tapi gapapa No.2\",\n                \"no_telp\": \"+628123456789\"\n            },\n            {\n                \"id\": \"66dd1d82-99ed-11ee-abae-0242ac1e0002\",\n                \"nama\": \"PT. KUNGKINGKANG\",\n                \"alamat\": \"Jl. AYAM No.2\",\n                \"no_telp\": \"+62882194381\"\n            },\n            {\n                \"id\": \"4bfc25cb-99ed-11ee-abae-0242ac1e0002\",\n                \"nama\": \"PT. Sawangan Sawungan\",\n                \"alamat\": \"Jl. Sawangan No.2\",\n                \"no_telp\": \"+628987654321\"\n            },\n            {\n                \"id\": \"0ffce9b1-e8eb-40df-889a-39428680aaab\",\n                \"nama\": \"PT. HOHOHOHOHO\",\n                \"alamat\": \"Jl. AYAM No.69\",\n                \"no_telp\": \"+62882194381\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a Perusahaan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/perusahaan/{{perusahaan_id}}"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admins"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 17:59:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702490352.579004"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702490352.579004"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Admins retrieved successfully\",\n    \"data\": {\n        \"admins\": [\n            {\n                \"id\": \"532816dc-99d0-11ee-9773-0242ac1e0002\",\n                \"name\": \"Admin\",\n                \"email\": \"adminadmin@gmail.com\",\n                \"password\": \"f6fdffe48c908deb0f4c3bd36c032e72\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Perusahaan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/perusahaan/{{perusahaan_id}}}"
+					},
+					"response": [
+						{
+							"name": "200 - Deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan/{{perusahaan_id}}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:39:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702496397.193463"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702496397.193463"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Items deleted successfully\",\n    \"data\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Barang",
+			"item": [
+				{
+					"name": "Create Barang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"id\", res.data.id)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ayam Hoheng 2\",\r\n    \"stock\": \"20\",\r\n    \"price\": \"80000\",\r\n    \"perusahaan_id\": \"4bfc25cb-99ed-11ee-abae-0242ac1e0002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/barang"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"PT. HOHOHOHOHO\",\r\n    \"alamat\": \"Jl. AYAM No.69\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:29:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495790.893147"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495790.893147"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"messages\": \"Items added successfully\",\n    \"data\": {\n        \"id\": \"0ffce9b1-e8eb-40df-889a-39428680aaab\",\n        \"nama\": \"PT. HOHOHOHOHO\",\n        \"alamat\": \"Jl. AYAM No.69\",\n        \"no_telp\": \"+62882194381\"\n    }\n}"
+						},
+						{
+							"name": "409 - Duplicate Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"PT. HOHOHOHOHO\",\r\n    \"alamat\": \"Jl. AYAM No.69\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan"
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:30:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495810.126417"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495810.126417"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 409,\n    \"error\": \"409\",\n    \"messages\": {\n        \"error\": \"Duplicate entry\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Barang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.collectionVariables.set(\"token\", res.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ayam Hoheng 69\",\r\n    \"stock\": \"20\",\r\n    \"price\": \"80000\",\r\n    \"perusahaan_id\": \"4bfc25cb-99ed-11ee-abae-0242ac1e0002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/barang/{{id}}"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"PT. KUNGKINGKANGKINGKONG\",\r\n    \"alamat\": \"Jl. AYAM No.2\",\r\n    \"no_telp\": \"+62882194381\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/perusahaan/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"perusahaan",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:32:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495934.062987"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495934.062987"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Items updated successfully\",\n    \"data\": {\n        \"nama\": \"PT. KUNGKINGKANGKINGKONG\",\n        \"alamat\": \"Jl. AYAM No.2\",\n        \"no_telp\": \"+62882194381\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get List of Barang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/barang"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:32:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702495959.050303"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702495959.050303"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1025"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Items retrieved successfully\",\n    \"data\": {\n        \"perusahaan\": [\n            {\n                \"id\": \"6e25ba8b-99d2-11ee-9773-0242ac1e0002\",\n                \"nama\": \"PT. Patah Hati\",\n                \"alamat\": \"Jl. Jomblo tapi gapapa No.2\",\n                \"no_telp\": \"+628123456789\"\n            },\n            {\n                \"id\": \"66dd1d82-99ed-11ee-abae-0242ac1e0002\",\n                \"nama\": \"PT. KUNGKINGKANG\",\n                \"alamat\": \"Jl. AYAM No.2\",\n                \"no_telp\": \"+62882194381\"\n            },\n            {\n                \"id\": \"4bfc25cb-99ed-11ee-abae-0242ac1e0002\",\n                \"nama\": \"PT. Sawangan Sawungan\",\n                \"alamat\": \"Jl. Sawangan No.2\",\n                \"no_telp\": \"+628987654321\"\n            },\n            {\n                \"id\": \"0ffce9b1-e8eb-40df-889a-39428680aaab\",\n                \"nama\": \"PT. HOHOHOHOHO\",\n                \"alamat\": \"Jl. AYAM No.69\",\n                \"no_telp\": \"+62882194381\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a Barang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/barang/{{id}}"
+					},
+					"response": [
+						{
+							"name": "200 - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admins"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 17:59:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702490352.579004"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702490352.579004"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Admins retrieved successfully\",\n    \"data\": {\n        \"admins\": [\n            {\n                \"id\": \"532816dc-99d0-11ee-9773-0242ac1e0002\",\n                \"name\": \"Admin\",\n                \"email\": \"adminadmin@gmail.com\",\n                \"password\": \"f6fdffe48c908deb0f4c3bd36c032e72\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Barang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/barang/{{id}}"
+					},
+					"response": [
+						{
+							"name": "200 - Deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/perusahaan/{{perusahaan_id}}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:39:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Debugbar-Time",
+									"value": "1702496397.193463"
+								},
+								{
+									"key": "Debugbar-Link",
+									"value": "http://localhost:8080/index.php?debugbar_time=1702496397.193463"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"messages\": \"Items deleted successfully\",\n    \"data\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Test Get Main Route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "perusahaan_id",
+			"value": ""
+		}
+	]
+}
