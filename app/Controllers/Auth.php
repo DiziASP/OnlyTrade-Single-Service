@@ -13,12 +13,12 @@ class Auth extends BaseController
 
     public function index()
     {
-        return $this->respond(['status' => 200, 'message' => 'This is login page']);
+        return view('login');
     }
 
     public function register()
     {
-        return $this->respond(['status' => 200, 'message' => 'This is register page']);
+        return view('register');
     }
 
     public function loginAction()

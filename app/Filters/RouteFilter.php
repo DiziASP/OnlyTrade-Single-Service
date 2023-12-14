@@ -5,10 +5,8 @@ namespace App\Filters;
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use \Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 
-class AuthFilter implements FilterInterface
+class RouteFilter implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -30,27 +28,7 @@ class AuthFilter implements FilterInterface
         $token = $request->getHeaderLine('Authorization');
 
         if (!$token) {
-            return service('response')->setStatusCode(401)->setJSON([
-                'status' => 401,
-                'message' => 'Unauthorized',
-                'data' => []
-            ]);
-        }
-
-        $key = getenv('JWT_SECRET');
-
-        // Extract
-        $token = explode(" ", $token)[1];
-
-        try {
-            $decoded = JWT::decode($token, new Key($key, 'HS256'));
-            return $request;
-        } catch (\Exception $e) {
-            return service('response')->setStatusCode(401)->setJSON([
-                'status' => 401,
-                'message' => 'Unauthorized',
-                'data' => []
-            ]);
+            return redirect()->to('/login');
         }
     }
 

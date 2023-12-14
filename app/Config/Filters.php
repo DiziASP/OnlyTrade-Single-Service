@@ -26,6 +26,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'jwt' => \App\Filters\AuthFilter::class,
+        'route' => \App\Filters\RouteFilter::class
     ];
 
     /**
