@@ -29,19 +29,12 @@
                     <td><?= $row['price'] ?></td>
                     <td><?= $row['perusahaan_name'] ?></td>
                     <td>
-                        <div class="dropdown">
-                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right p-2" aria-labelledby="dropdownMenuLink">
-                                <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#modal-edit-event">
-                                    <i class_="mdi mdi-pencil mr-1"></i> Edit
-                                </button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-event">
-                                    <i class="mdi mdi-delete mr-1"></i> Delete
-                                </button>
-                            </div>
-                        </div>
+                        <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#modal-edit-event">
+                            <i class="mdi mdi-pencil mr-1"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-event">
+                            <i class="mdi mdi-delete mr-1"></i>
+                        </button>
                     </td>
                 </tr>
 

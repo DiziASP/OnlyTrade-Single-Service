@@ -29,16 +29,14 @@
                     <td><?= $row['alamat'] ?></td>
                     <td><?= $row['no_telp'] ?></td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-event">
-                            <i class="mdi mdi-pencil mr-1"></i> Edit
-                        </button>
-
-                    </td>
                     <td>
-                        <!-- Button will trigger DELETE method to /api/perusahaan with 'id' using ajax -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-event">
-                            <i class="mdi mdi-delete mr-1"></i> Delete
+                        <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#modal-edit-event">
+                            <i class="mdi mdi-pencil mr-1"></i>
                         </button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-event">
+                            <i class="mdi mdi-delete mr-1"></i>
+                        </button>
+                    </td>
 
                     </td>
                 </tr>
