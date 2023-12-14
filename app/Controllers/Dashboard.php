@@ -61,4 +61,16 @@ class Dashboard extends BaseController
         $data = $response['data'];
         return view('perusahaan_dashboard', ['data' => $data]);
     }
+
+    public function perusahaan_add()
+    {
+        return view('perusahaan_add');
+    }
+
+    public function perusahaan_edit($id = null)
+    {
+        $perusahaanModel = new \App\Models\PerusahaanModel();
+        $data = $perusahaanModel->find($id);
+        return view('perusahaan_edit', ['data' => $data]);
+    }
 }

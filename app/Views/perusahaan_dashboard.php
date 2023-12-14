@@ -6,9 +6,11 @@
     <div class="card-header align-items-center p-0 py-4">
         <h1 class="font-weight-bold">Dashboard | Perusahaan </h1>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-event">
-            <i class="mdi mdi-plus mr-1"></i> Add Perusahaan
-        </button>
+        <a href="/perusahaan/add">
+            <button type="button" class="btn btn-primary btn-pill ml-4">
+                <i class="mdi mdi-plus"></i> Tambah Perusahaan
+            </button>
+        </a>
     </div>
     <table id="productsTable" class="table table-hover table-product" style="width:100%">
         <thead>
@@ -29,15 +31,14 @@
                     <td><?= $row['alamat'] ?></td>
                     <td><?= $row['no_telp'] ?></td>
                     <td>
-                    <td>
-                        <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#modal-edit-event">
-                            <i class="mdi mdi-pencil mr-1"></i>
+                        <a href="/perusahaan/<?= $row['id'] ?>">
+                            <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#modal-edit-event">
+                                <i class="mdi mdi-pencil"></i>
+                            </button>
+                        </a>
+                        <button type="button" class="btn btn-danger" onclick="handleDelete('<?= $row['id'] ?>')">
+                            <i class="mdi mdi-delete"></i>
                         </button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-event">
-                            <i class="mdi mdi-delete mr-1"></i>
-                        </button>
-                    </td>
-
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -45,4 +46,19 @@
         </tbody>
     </table>
 </div>
+<!-- Delete Function using Ajax -->
+<script>
+    function handleDelete(id) {
+        $.ajax({
+            url: '/api/perusahaan/' + id,
+            type: 'DELETE',
+            success: function(result) {
+                location.reload();
+            },
+            error: function(xhr, status, error) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+</script>
 <?= $this->endSection() ?>
