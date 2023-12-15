@@ -42,6 +42,10 @@
             price: document.getElementById('price').value,
             perusahaan_id: document.getElementById('perusahaan_id').value,
         }
+        if (data.name == '' || data.stock == 0 || data.price == 0 || data.perusahaan_id == null) {
+            alert('Semua data harus diisi');
+            return;
+        }
 
         $.ajax({
             url: '/api/barang',

@@ -34,6 +34,11 @@
             no_telp: document.getElementById('no_telp').value,
         }
 
+        if (data.nama == '' || data.alamat == '' || data.no_telp == '') {
+            alert('Data tidak boleh kosong');
+            return;
+        }
+
         $.ajax({
             url: '/api/perusahaan',
             type: 'POST',
