@@ -5,9 +5,12 @@ namespace App\Controllers;
 helper('http');
 class Dashboard extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('dashboard');
+        $monolith = "https://onlytrade-monolith-production.up.railway.app";
+        $response = http_request($monolith . '/api/history', null, null, "GET");
+
+        return view('dashboard', ['data' => $response]);
     }
 
     public function barang_dashboard()
