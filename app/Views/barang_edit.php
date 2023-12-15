@@ -17,7 +17,7 @@
         <label for="price">Price</label>
         <input type="number" class="form-control rounded-0" id="price" name="price" placeholder="<?= $data['price'] ?>">
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
         <label for="perusahaan">Perusahaan</label>
         <select class="form-control rounded-0" id="perusahaan_id" name="perusahaan_id">
             <?php foreach ($perusahaan as $row) : ?>
@@ -26,7 +26,7 @@
                 </option>
             <?php endforeach; ?>
         </select>
-    </div> -->
+    </div>
     <div class="form-footer">
         <button type="button" class="btn btn-secondary btn-pill" onclick="handleSubmit('<?= $data['id'] ?>')">Submit</button>
         <a href="/barang">
@@ -42,12 +42,13 @@
             name: document.getElementById('name').value,
             stock: document.getElementById('stock').value,
             price: document.getElementById('price').value,
+            perusahaan_id: document.getElementById('perusahaan_id').value,
         }
-        alert(JSON.stringify(data));
         $.ajax({
             url: '/api/barang/' + id,
             method: 'PUT',
-            data: data,
+            contentType: 'application/json',
+            data: JSON.stringify(data),
             success: function(result) {
                 window.location.href = '/barang';
             },

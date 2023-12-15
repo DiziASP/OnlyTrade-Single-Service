@@ -4,39 +4,41 @@
 <div class="align-items-center p-0 py-4">
     <h1 class="font-weight-bold">Dashboard | Edit Perusahaan </h1>
 </div>
-<form onsubmit="handleSubmit(<?= $data['id'] ?>)">
+<form>
     <div class="form-group">
-        <label for="name">Nama</label>
-        <input type="text" class="form-control rounded-0" id="nama" name="nama" placeholder="<? $data['nama'] ?>">
+        <label for="nama">Nama</label>
+        <input type="text" class="form-control rounded-0" id="nama" name="nama" placeholder="<?= $data['nama'] ?>">
     </div>
     <div class="form-group">
-        <label for="stock">Alamat</label>
-        <input type="text" class="form-control rounded-0" id="alamat" name="alamat" placeholder="<? $data['alamat'] ?>">
+        <label for="alamat">Alamat</label>
+        <input type="text" class="form-control rounded-0" id="alamat" name="alamat" placeholder="<?= $data['alamat'] ?>">
     </div>
     <div class="form-group">
-        <label for="price">Nomor Telepon</label>
-        <input type="text" class="form-control rounded-0" id="no_telp" name="no_telp" placeholder="<? $data['no_telp'] ?>">
+        <label for="no_telp">Nomor Telepon</label>
+        <input type="text" class="form-control rounded-0" id="no_telp" name="no_telp" placeholder="<?= $data['no_telp'] ?>">
     </div>
     <div class="form-footer">
-        <button type="submit" class="btn btn-secondary btn-pill">Submit</button>
-        <a href="/perusahaan">
+        <button type="button" class="btn btn-secondary btn-pill" onclick="handleSubmit('<?= $data['id'] ?>')">Submit</button>
+        <a href="/barang">
             <button type="button" class="btn btn-light btn-pill">Cancel</button>
         </a>
+    </div>
 
 </form>
 
 <script>
     function handleSubmit(id) {
         data = {
-            name: document.getElementById('nama').value,
-            stock: document.getElementById('alamat').value,
-            price: document.getElementById('no_telp').value,
+            nama: document.getElementById('nama').value,
+            alamat: document.getElementById('alamat').value,
+            no_telp: document.getElementById('no_telp').value,
         }
-        alert(JSON.stringify(data));
+
         $.ajax({
             url: '/api/perusahaan/' + id,
             method: 'PUT',
-            data: data,
+            contentType: 'application/json',
+            data: JSON.stringify(data),
             success: function(result) {
                 window.location.href = '/perusahaan';
             },

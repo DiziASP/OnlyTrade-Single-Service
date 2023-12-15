@@ -78,13 +78,18 @@ class Barang extends ResourceController
             'perusahaan_id' => $this->request->getVar('perusahaan_id'),
         ];
         try {
-            $model->update($id, $data);
-            $response = [
-                'status'   => 200,
-                'messages' => 'Items updated successfully',
-                'data'     => $data,
-            ];
-            return $this->respond($response);
+            $res = $model->update($id, $data);
+
+            if ($res) {
+                $response = [
+                    'status'   => 200,
+                    'messages' => 'Items updated successfully',
+                    'data'     => $data,
+                ];
+                return $this->respond($response);
+            }
+
+            throw new DatabaseException("Data Not Found");
         } catch (DatabaseException $e) {
             // Check if it's a duplicate entry error
             if (strpos($e->getMessage(), "Duplicate entry") !== false) {
