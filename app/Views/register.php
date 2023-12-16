@@ -1,78 +1,100 @@
 <!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
 
-        .navbar {
-            background-color: #dc3545;
-            /* Red background color */
-        }
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        .navbar-brand {
-            color: #fff;
-            /* White text color */
-        }
+        <title>OnlyTrade | Signin</title>
 
-        .container {
-            max-width: 400px;
-            margin-top: 100px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            /* Increased thickness of box shadow */
-            padding: 20px;
-            border-radius: 8px;
-        }
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+        <link href="<?php echo base_url() ?>/plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+        <link href="<?php echo base_url() ?>/plugins/simplebar/simplebar.css" rel="stylesheet" />
 
-        .btn-red {
-            background-color: #dc3545;
-            color: #fff;
-        }
-    </style>
+        <!-- PLUGINS CSS STYLE -->
+        <link href="<?php echo base_url() ?>/plugins/nprogress/nprogress.css" rel="stylesheet" />
+
+        <!-- MONO CSS -->
+        <link id="main-css-href" rel="stylesheet" href="<?php echo base_url() ?>/css/style.css" />
+
+
+
+
+        <!-- FAVICON -->
+        <link href="<?php echo base_url() ?>/images/favicon.png" rel="shortcut icon" />
+
+        <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+        <script src="<?php echo base_url() ?>/plugins/nprogress/nprogress.js"></script>
+    </head>
+
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Only Trade</a>
+<body class="bg-light-gray" id="body">
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh">
+        <div class="d-flex flex-column justify-content-between">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="card card-default mb-0">
+                        <div class="card-header pb-0">
+                            <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
+                                <a class="w-auto pl-0" href="/">
+                                    <img src="<?php echo base_url() ?>/images/icon.png" alt="Onlytrade">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body px-5 pb-5 pt-0">
+
+                            <h4 class="text-dark text-weight-bold mb-6 text-center">Sign Up</h4>
+
+                            <form action="/api/auth/register" method="post">
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <input type="text" class="form-control input-lg" id="name" name="name" aria-describedby="emailHelp" placeholder="name">
+                                    </div>
+                                    <div class="form-group col-md-12 mb-4">
+                                        <input type="email" class="form-control input-lg" id="email" name="email" aria-describedby="emailHelp" placeholder="email">
+                                    </div>
+                                    <div class="form-group col-md-12 ">
+                                        <input type="password" class="form-control input-lg" id="password" name="password" placeholder="Password">
+                                    </div>
+                                    <div class="form-group col-md-12 ">
+                                        <input type="password" class="form-control input-lg" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-pill mb-4">Sign Up</button>
+
+                                        <p>Already have an account ?
+                                            <a class="text-blue" href="/login">Sign In</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-    <div class="container">
-        <h2 class="mb-4 text-center">Register</h2>
-        <form action="/api/auth/register" method="post">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Create your password" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Create your password" required>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-red">Register</button>
-            </div>
-        </form>
-        <p class="mt-3 text-center">Already have an account? <a href="<?= base_url('login') ?>">Login here</a></p>
-
     </div>
-    </div>
+
 </body>
 
 </html>

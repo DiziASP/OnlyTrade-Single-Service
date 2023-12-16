@@ -16,13 +16,6 @@
                         <span class="d-none d-lg-inline-block">Admin</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li>
-                            <a class="dropdown-link-item" href="user-profile.html">
-                                <i class="mdi mdi-account-outline"></i>
-                                <span class="nav-text">My Profile</span>
-                            </a>
-                        </li>
-
                         <li class="dropdown-footer">
                             <a class="dropdown-link-item" href="/api/auth/logout">
                                 <i class="mdi mdi-logout"></i>

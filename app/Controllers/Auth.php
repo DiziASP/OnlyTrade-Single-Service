@@ -31,13 +31,13 @@ class Auth extends BaseController
         $user = $userModel->where('email', $email)->first();
 
         if (is_null($user)) {
-            return $this->respond(['error' => 'Invalid username or password.'], 401);
+            return redirect()->to('/login');
         }
 
         $pwd_verify = md5($password) == $user['password'];
 
         if (!$pwd_verify) {
-            return $this->respond(['error' => 'Invalid username or password.'], 401);
+            return redirect()->to('/login');
         }
 
         $key = getenv('JWT_SECRET');
@@ -88,17 +88,10 @@ class Auth extends BaseController
             ];
             $model->save($data);
 
-            return $this->respond([
-                'status'   => 200,
-                'messages' => 'Register successfully',
-                'data'     => $data,
-            ], 200);
+            return redirect()->to('/login');
         } else {
             // If email already exist
-            return $this->respond([
-                'status'   => 400,
-                'messages' => $this->validator->getErrors(),
-            ], 400);
+            return redirect()->to('/register');
         }
     }
 
