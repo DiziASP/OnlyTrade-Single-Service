@@ -35,8 +35,5 @@ services:
     environment:
       PMA_HOST: mariadb-ss
       PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: mysql
     depends_on:
       - mariadb
