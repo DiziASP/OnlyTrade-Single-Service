@@ -32,7 +32,7 @@
     <link id="main-css-href" rel="stylesheet" href="<?php echo base_url() ?>/css/style.css" />
 
     <!-- FAVICON -->
-    <link href="<?php echo base_url() ?>/images/icon.png" rel="shortcut icon" />
+    <link href="<?php echo base_url() ?>/images/favicon.ico" rel="shortcut icon" />
 
     <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -98,13 +98,13 @@
 
 
     <script src="<?php echo base_url() ?>/plugins/prism/prism.js"></script>
+    <script src="<?php echo base_url() ?>/plugins/apexcharts/apexcharts.min.js"></script>
 
 
     <script src="<?php echo base_url() ?>/js/mono.js"></script>
     <script src="<?php echo base_url() ?>/js/chart.js"></script>
     <script src="<?php echo base_url() ?>/js/map.js"></script>
     <script src="<?php echo base_url() ?>/js/custom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 

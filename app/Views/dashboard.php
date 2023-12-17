@@ -71,8 +71,24 @@
         </tbody>
     </table>
 </div>
-
 <script>
-    // Add options to Apexchart
+    var options = {
+        series: [<?= $total; ?>],
+        chart: {
+            height: 350,
+            type: 'radialBar',
+        },
+        plotOptions: {
+            radialBar: {
+                hollow: {
+                    size: '70%',
+                }
+            },
+        },
+        labels: ['Total Penjualan'],
+    };
+
+    var chart = new ApexCharts(document.querySelector("#radial-bar-chart-1"), options);
+    chart.render();
 </script>
 <?= $this->endSection() ?>

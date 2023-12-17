@@ -33,7 +33,7 @@
 
 
         <!-- FAVICON -->
-        <link href="<?php echo base_url() ?>/images/favicon.png" rel="shortcut icon" />
+        <link href="<?php echo base_url() ?>/images/favicon.ico" rel="shortcut icon" />
 
         <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
